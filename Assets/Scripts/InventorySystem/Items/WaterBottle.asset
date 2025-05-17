@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d6cb8d3871da44a91fb0392700e6a4, type: 3}
+  m_Name: WaterBottle
+  m_EditorClassIdentifier: 
+  ItenName: Water Bottle
+  MaxStack: 5
+  itemType: 2
+  ItemIcon: {fileID: 2305405133064552179, guid: cd63bc2ee6e4ab04c9556c059c557d42, type: 3}
+  ItemPrefab: {fileID: 5435766757229814643, guid: 6cb4ab9f6aa817a49bcd976628f13906, type: 3}
+  Damage: 0
+  AttackRange: 0
+  AttackRate: 0
+  Restohealth: 0
+  RestoreHydration: 1
+  RestoreHunger: 0
