@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0343b23890ce3064c88c7899d9fb78fb
+guid: c12ef8cde7c63004188a955f69da26fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4453188267549478522
-    second: Assets_Environments_SceneMap 1_0
+      213: 3483424593322090049
+    second: Cabin Wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,31 +96,66 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Assets_Environments_SceneMap 1_0
+      name: Cabin Wall
       rect:
         serializedVersion: 2
-        x: 1337
-        y: 403
-        width: 488
-        height: 358
-      alignment: 9
-      pivot: {x: 0.49999976, y: 0.55543303}
+        x: 138
+        y: 475
+        width: 751
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 960, y: 540}
-        - {x: -960, y: 540}
-        - {x: -960, y: -540}
-        - {x: 960, y: -540}
+      outline: []
       physicsShape: []
-      tessellationDetail: 1
+      tessellationDetail: -1
       bones: []
-      spriteID: a7e4935a227eccd30800000000000000
-      internalID: 4453188267549478522
+      spriteID: 14e92de263c975030800000000000000
+      internalID: 3483424593322090049
       vertices: []
       indices: 
       edges: []
@@ -129,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eda0b5cdd2a567a489768b300f116d49
+    spriteID: 0332c5f508780a745be0a45e91c94ced
     internalID: 0
     vertices: []
     indices: 
@@ -139,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Assets_Environments_SceneMap 1_0: 4453188267549478522
+      Cabin Wall: 3483424593322090049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

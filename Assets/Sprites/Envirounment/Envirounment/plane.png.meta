@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 464c3e8ff7e91a54ea17d294d6dae27b
+guid: 6c10c31186208fd4a80021f5c9efc060
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5042693126997354557
-    second: Assets_Buildings_Roofs_0
+      213: -5681613791555460825
+    second: plane_0
   - first:
-      213: -7849325133570482019
-    second: Assets_Buildings_Roofs_1
+      213: -4971496277874117778
+    second: plane_1
   - first:
-      213: -8081542455818118796
-    second: Assets_Buildings_Roofs_2
+      213: 8578526434298423843
+    second: plane_2
   - first:
-      213: 8037405689476226933
-    second: Assets_Buildings_Roofs_3
+      213: -71850760583209166
+    second: plane_3
+  - first:
+      213: -3622154476317959229
+    second: plane_4
+  - first:
+      213: -8151916955095676026
+    second: plane_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,35 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Assets_Buildings_Roofs_0
+      name: plane_1
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 448
-        width: 465
-        height: 312
-      alignment: 9
-      pivot: {x: 0.44717637, y: 0.5151213}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c7d40e7151c40ab0800000000000000
-      internalID: -5042693126997354557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assets_Buildings_Roofs_1
-      rect:
-        serializedVersion: 2
-        x: 1831
-        y: 578
-        width: 6
-        height: 20
+        x: 18
+        y: 23
+        width: 861
+        height: 937
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,52 +169,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d906cf6e068911390800000000000000
-      internalID: -7849325133570482019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assets_Buildings_Roofs_2
-      rect:
-        serializedVersion: 2
-        x: 1010
-        y: 47
-        width: 238
-        height: 241
-      alignment: 9
-      pivot: {x: 0.5503296, y: 0.4588276}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 47919bb44f798df80800000000000000
-      internalID: -8081542455818118796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Assets_Buildings_Roofs_3
-      rect:
-        serializedVersion: 2
-        x: 1455
-        y: 18
-        width: 465
-        height: 289
-      alignment: 9
-      pivot: {x: -4.3088603, y: 2.8179677}
-      border: {x: 10, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57f1fecf3e99a8f60800000000000000
-      internalID: 8037405689476226933
+      spriteID: e63f223b972b10bb0800000000000000
+      internalID: -4971496277874117778
       vertices: []
       indices: 
       edges: []
@@ -239,7 +179,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fdabd3fe3d96fd34aa08214fad160716
+    spriteID: 15305d01e12ae564d924f644f9bc4ad6
     internalID: 0
     vertices: []
     indices: 
@@ -249,10 +189,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Assets_Buildings_Roofs_0: -5042693126997354557
-      Assets_Buildings_Roofs_1: -7849325133570482019
-      Assets_Buildings_Roofs_2: -8081542455818118796
-      Assets_Buildings_Roofs_3: 8037405689476226933
+      plane_1: -4971496277874117778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
