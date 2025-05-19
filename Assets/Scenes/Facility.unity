@@ -10584,11 +10584,11 @@ MonoBehaviour:
   MaxHydration: 1000
   MaxSleep: 1000
   MaxInsanity: 2000
-  Health: -3000
+  Health: -4000
   Hunger: 0
   Hydration: 0
   Sleep: 0
-  Insanity: 15
+  Insanity: 20
   HungerDrainRate: 1
   HydrationDrainRate: 1.5
   SleepDrainRate: 0.5

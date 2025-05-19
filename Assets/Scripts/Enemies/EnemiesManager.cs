@@ -16,7 +16,7 @@ public abstract class EnemiesManager : MonoBehaviour
 
     protected virtual void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("player").transform;
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     protected bool PlayerInDetectionRange()
