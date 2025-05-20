@@ -500,7 +500,7 @@ VideoPlayer:
   m_RenderMode: 1
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
@@ -535,6 +535,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2105777404}
+  - {fileID: 2124945992}
   - {fileID: 1226756445}
   - {fileID: 527010980}
-  - {fileID: 2124945992}
