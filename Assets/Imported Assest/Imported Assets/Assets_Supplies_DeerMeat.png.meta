@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Assets_Supplies_DeerMeat_0: 2946792996138663186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bcf21edb59fb8d7448cc564a4c0e1c8f
+guid: 2486c15d33c0b1f4ba9507786e14bb64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 959738533661381585
-    second: Assets_Supplies_WaterBottle_0
+      213: -1869492064128092055
+    second: PauseMenu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Assets_Supplies_WaterBottle_0
+      name: PauseMenu_0
       rect:
         serializedVersion: 2
-        x: 651
-        y: 280
-        width: 684
-        height: 645
+        x: 0
+        y: 0
+        width: 1085
+        height: 659
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d314288c1da15d00800000000000000
-      internalID: 959738533661381585
+      spriteID: 968bb376fda3e06e0800000000000000
+      internalID: -1869492064128092055
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Assets_Supplies_WaterBottle_0: 959738533661381585
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
