@@ -13,7 +13,7 @@ public class Bullets : Soldier
         Destroy(gameObject, 5f);
     }
 
-    public override void Update()
+    void Update()
     {
         transform.Translate(Direction * speed * Time.deltaTime);
     }

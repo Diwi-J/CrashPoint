@@ -16,7 +16,7 @@ public class Soldier : EnemiesManager
         AttackCooldown = 2f;
     }
 
-    public override void Behaviour()
+    public void Behaviour()
     {
         if (PlayerInDetectionRange())
         {

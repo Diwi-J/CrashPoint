@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class EnemiesManager : MonoBehaviour
+public class EnemiesManager : MonoBehaviour
 {
     [Header("Enemy Stats")]
     [SerializeField] protected float Health;
@@ -14,7 +14,7 @@ public abstract class EnemiesManager : MonoBehaviour
 
     protected Transform Player;
 
-    protected virtual void Start()
+    private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -24,10 +24,23 @@ public abstract class EnemiesManager : MonoBehaviour
         return Vector2.Distance(transform.position, Player.position) <= DetectionRange;
     }
 
-    public abstract void Behaviour();
-    // Update is called once per frame
-    public virtual void  Update()
+    public void MoveTowardsPlayer()
     {
-        Behaviour();
+        if (Player == null) return;
+        transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
+    }
+ 
+    public void TakeDamage(float DamageAmount)
+    {
+        Health -= DamageAmount;
+        if (Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

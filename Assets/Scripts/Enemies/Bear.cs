@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bear : EnemiesManager
 {
+
     public void Awake()
     {
         Damage = 300f;
@@ -13,27 +14,23 @@ public class Bear : EnemiesManager
         AttackCooldown = 2f;
     }
 
-    protected override void Start()
+    void Update()
     {
-        base.Start();
-
-        Damage = 300f;
-        Health = 2000f;
-        MoveSpeed = 5f;
+        Behaviour();
     }
-    public override void Behaviour()
+
+    public void Behaviour()
     {
         if (PlayerInDetectionRange())
         {
             if (Vector2.Distance(transform.position, Player.position) <= AttackRange)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
+                MoveTowardsPlayer();
             }
             else
             {
                 if (Time.time > AttackCooldown)
                 {
-
                     AttackPlayer();
                 }
             }
