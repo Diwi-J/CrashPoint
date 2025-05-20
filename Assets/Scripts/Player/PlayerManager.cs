@@ -48,6 +48,7 @@ public class PlayerManager : MonoBehaviour
     public Vector2 RespawnPosition;
     #endregion Fields
 
+    /*
     public enum PlayerState
     {
         Alive,
@@ -56,6 +57,7 @@ public class PlayerManager : MonoBehaviour
         Dead
     }
     PlayerState CurrentPlayerState = PlayerState.Alive;
+    */
 
     void Awake()
     {

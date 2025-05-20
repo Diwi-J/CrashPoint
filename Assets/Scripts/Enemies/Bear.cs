@@ -1,44 +1,102 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Bear : EnemiesManager
 {
+    [SerializeField] float JumpSpeed = 10f;
+    [SerializeField] float JumpDuration = 0.5f;
 
-    public void Awake()
+    bool IsJumping = false;
+    float JumpTime;
+    Vector2 JumpTarget;
+
+    Rigidbody2D rb;
+
+    public override void Awake()
     {
-        Damage = 300f;
-        Health = 2000f;
-        MoveSpeed = 5f;
+        base.Awake();
+        rb = GetComponent<Rigidbody2D>();
 
-        DetectionRange = 10f;
-        AttackRange = 1.2f;
-        AttackCooldown = 2f;
+        Health = 1000f;
+        Damage = 300f;
+        MoveSpeed = 4f;
+
+        DetectionRange = 7f;
+        AttackRange = 2f;
+        AttackCooldown =2f;
     }
 
     void Update()
     {
-        Behaviour();
+        if (Player == null) return;
+
+        RotateTowardsPlayer();
+
+        if (!IsJumping)
+        {
+            Behaviour();
+        }
+ 
     }
+
+    private void FixedUpdate()
+    {
+        if (IsJumping)
+        {
+            JumpTime -= Time.fixedDeltaTime;
+
+            if (JumpTime > 0f)
+            {
+                rb.linearVelocity = JumpTarget * JumpSpeed;
+            }
+            else
+            {
+                IsJumping = false;
+                rb.linearVelocity = Vector2.zero;
+
+                if (Vector2.Distance(transform.position, Player.position) <= AttackRange * 1.2f)
+                {
+                    PlayerManager.Instance.TakeDamage(Damage);
+                }
+            }
+        }   
+    }
+
 
     public void Behaviour()
     {
         if (PlayerInDetectionRange())
         {
-            if (Vector2.Distance(transform.position, Player.position) <= AttackRange)
+            if (Vector2.Distance(transform.position, Player.position) > AttackRange)
             {
                 MoveTowardsPlayer();
             }
             else
             {
-                if (Time.time > AttackCooldown)
-                {
-                    AttackPlayer();
-                }
+                StopMoving();
+                AttackPlayer();
             }
         }
     }
 
     void AttackPlayer()
     {
-        PlayerManager.Instance.TakeDamage(Damage);
+        if (!IsJumping && Time.time > AttackCooldown)
+        {
+            JumpTarget = (Player.position - transform.position).normalized;
+            JumpTime = JumpDuration;
+            IsJumping = true;
+            AttackCooldown = Time.time + AttackCooldown;
+        }
     }
+
+    void RotateTowardsPlayer()
+    {
+        if (Player == null) return;
+
+        Vector2 direction = (Player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+    }
+
 }

@@ -51,6 +51,8 @@ MonoBehaviour:
   Damage: 0
   MoveSpeed: 0
   DetectionRange: 0
+  AttackRange: 0
+  AttackCooldown: 0
 --- !u!212 &8256459026283706945
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -2,21 +2,25 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-    [SerializeField] protected float Health;
-    [SerializeField] protected float Damage;
-    [SerializeField] protected float MoveSpeed;
+    protected float Health;
+    protected float Damage;
+    protected float MoveSpeed;
 
 
-    [SerializeField] protected float DetectionRange;
-    [SerializeField] protected float AttackRange;
-    [SerializeField] protected float AttackCooldown;
+    protected float DetectionRange;
+    protected float AttackRange;
+    protected float AttackCooldown;
 
     protected Transform Player;
 
-    private void Awake()
+    public virtual void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (Player == null)
+        {
+            Debug.LogError("Player not found in the scene. Make sure the player has the 'Player' tag.");
+        }
     }
 
     protected bool PlayerInDetectionRange()
@@ -36,6 +40,14 @@ public class EnemiesManager : MonoBehaviour
         if (Health <= 0)
         {
             Die();
+        }
+    }
+
+    public void StopMoving()
+    {
+        if (TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+        {
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
