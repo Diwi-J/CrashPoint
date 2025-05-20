@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4536338415454596701}
   - component: {fileID: 900361286656471647}
   - component: {fileID: 8663486752708258256}
+  - component: {fileID: 295814686316372976}
   m_Layer: 0
   m_Name: Cabin Wall
   m_TagString: Untagged
@@ -77,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3483424593322090049, guid: f251e518e70b58845b66ea8417f4d94e, type: 3}
+  m_Sprite: {fileID: 6586801295640277981, guid: f251e518e70b58845b66ea8417f4d94e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.48, y: 2.74}
+  m_Size: {x: 7.51, y: 0.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -109,3 +110,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.51, y: 0.61, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &295814686316372976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135981856094627873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.755005, y: -0.30499268, z: 0}
+  - {x: -3.755005, y: 0.30499268, z: 0}
+  - {x: 3.755005, y: 0.30499268, z: 0}
+  - {x: 3.755005, y: -0.30499268, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 900361286656471647}
+  m_ShadowShape2DProvider:
+    rid: 8695782837539831888
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: -0.010002136, y: 0, z: 0}
+      m_Extent: {x: 3.7149887, y: 0.2749939, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.03
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.03
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: -1
+  m_PreviousShadowCastingSource: -1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8695782837539831888
+      type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 

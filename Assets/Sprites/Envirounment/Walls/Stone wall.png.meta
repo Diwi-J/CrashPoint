@@ -142,10 +142,10 @@ TextureImporter:
       name: Stone wall
       rect:
         serializedVersion: 2
-        x: 418
-        y: 29
-        width: 83
-        height: 970
+        x: 422
+        y: 34
+        width: 75
+        height: 961
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
