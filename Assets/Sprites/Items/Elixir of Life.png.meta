@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Elixir of Life_0: -5121372421142577793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
