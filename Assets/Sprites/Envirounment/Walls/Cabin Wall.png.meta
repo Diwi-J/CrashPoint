@@ -155,7 +155,7 @@ TextureImporter:
       tessellationDetail: -1
       bones: []
       spriteID: 14e92de263c975030800000000000000
-      internalID: 3483424593322090049
+      internalID: 6586801295640277981
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cabin Wall: 3483424593322090049
+      Cabin Wall: 6586801295640277981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

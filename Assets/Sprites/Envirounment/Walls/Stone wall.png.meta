@@ -155,7 +155,7 @@ TextureImporter:
       tessellationDetail: -1
       bones: []
       spriteID: 7eb1421de158ce2a0800000000000000
-      internalID: -6706839377657193497
+      internalID: -2488204191756105881
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stone wall: -6706839377657193497
+      Stone wall: -2488204191756105881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
