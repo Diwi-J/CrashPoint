@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4485561948279954754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1559659659452017838}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1559659659452017838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4485561948279954754}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.16, y: 2.47, z: 0.12195532}
-  m_LocalScale: {x: 3.2505686, y: 2.6358547, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7195715522598383923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5631207066118240539
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +33,7 @@ Transform:
   m_LocalScale: {x: 0.37938347, y: 0.30763844, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1559659659452017838}
+  - {fileID: 7025534099791543571}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &8587256802243014880
@@ -79,8 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe77a0db1eb29449a2f857a4f7b5f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 873121090078542669, guid: ed881b7338ec74346be827bd58f73347, type: 3}
-  FirePoint: {fileID: 1559659659452017838}
+  Health: 0
+  Damage: 0
+  MoveSpeed: 0
+  DetectionRange: 0
+  AttackRange: 0
+  AttackCooldown: 0
+  bulletPrefab: {fileID: 873121090078542669, guid: ed881b7338ec74346be827bd58f73347, type: 3}
+  firePoint: {fileID: 7025534099791543571}
+  bulletSpeed: 12
 --- !u!212 &6044672450143382423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -209,3 +185,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.525113, y: 4.552572}
   m_EdgeRadius: 0
+--- !u!1 &7623311807345998155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7025534099791543571}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7025534099791543571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7623311807345998155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16, y: 3.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7195715522598383923}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

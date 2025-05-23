@@ -2,26 +2,22 @@ using UnityEngine;
 
 public class Soldier : EnemiesManager
 {
-    public GameObject Bullet;
-    public Transform FirePoint;
+    [Header("Ranged Attack")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float bulletSpeed = 12f;
 
-    float BulletSpeed = 10f;
-    float FireDelay = 2f;
-    float FireTime;
-
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 
-        Damage = 100f;
-        Health = 1000f;
-        MoveSpeed = 0f;
+        Health = 150f;
+        Damage = 20f;
+        MoveSpeed = 0f; 
 
-        DetectionRange = 10f;
+        DetectionRange = 15f;
         AttackRange = 10f;
-        AttackCooldown = 2f;
-
-        FireTime = Time.time + FireDelay;
+        AttackCooldown = 1.8f;
     }
 
     void Update()
@@ -30,47 +26,27 @@ public class Soldier : EnemiesManager
 
         RotateTowardsPlayer();
 
-        if (PlayerInDetectionRange())
-        {
-            Aim();
-        }
-
-    }
-
-    void Aim()
-    {
-        float DistanceToPlayer = Vector2.Distance(transform.position, Player.position);
-
-        if (DistanceToPlayer <= AttackRange && Time.time >= FireTime)
+        if (PlayerInDetectionRange() && Vector2.Distance(transform.position, Player.position) <= AttackRange &&
+            Time.time >= NextAttackTime)
         {
             Shoot();
-            FireTime = Time.time + AttackCooldown;
+            NextAttackTime = Time.time + AttackCooldown;
         }
     }
 
     void Shoot()
     {
-        if (FirePoint == null) return;
+        Vector2 firePosition = firePoint.position;
+        Vector2 direction = ((Vector2)Player.position - firePosition).normalized;
 
-        Vector2 firePosition = FirePoint.position;
-        Vector2 playerPosition = Player.position;
-
-        GameObject bullet = Instantiate(Bullet, firePosition, Quaternion.identity);
-        Bullets bulletScript = bullet.GetComponent<Bullets>();
-
-        if (bulletScript != null)
-        {
-            Vector2 direction = (playerPosition - firePosition).normalized;
-            bulletScript.Setup(direction, BulletSpeed, Damage);
-        }
+        GameObject bullet = Instantiate(bulletPrefab, firePosition, Quaternion.identity);
+        bullet.GetComponent<Bullet>().Initialize(direction, bulletSpeed, Damage);
     }
 
     void RotateTowardsPlayer()
     {
-        if (Player == null) return;
-
         Vector2 direction = (Player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

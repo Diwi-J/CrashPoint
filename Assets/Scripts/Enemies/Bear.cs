@@ -1,29 +1,26 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Bear : EnemiesManager
 {
-    [SerializeField] float JumpSpeed = 10f;
-    [SerializeField] float JumpDuration = 0.5f;
+    [Header("Bear Settings")]
+    [SerializeField] private float lungeSpeed = 8f;
+    [SerializeField] private float lungeDuration = 0.4f;
 
-    bool IsJumping = false;
-    float JumpTime;
-    Vector2 JumpTarget;
+    private bool isLunging;
+    private float lungeTimer;
 
-    Rigidbody2D rb;
+    private Vector2 lungeDirection;
+    private Rigidbody2D rb;
 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
-
-        Health = 1000f;
-        Damage = 300f;
+                
+        Health = 300f;
+        Damage = 40f;
         MoveSpeed = 4f;
-
-        DetectionRange = 7f;
-        AttackRange = 2f;
-        AttackCooldown =2f;
+        AttackRange = 1.8f;
     }
 
     void Update()
@@ -32,71 +29,60 @@ public class Bear : EnemiesManager
 
         RotateTowardsPlayer();
 
-        if (!IsJumping)
+        if (!isLunging && PlayerInDetectionRange())
+            Behavior();
+    }
+
+    void FixedUpdate()
+    {
+        if (isLunging)
+            HandleLunge();
+    }
+
+    void Behavior()
+    {
+        float distance = Vector2.Distance(transform.position, Player.position);
+
+        if (distance > AttackRange)
         {
-            Behaviour();
+            MoveTowardsPlayer();
         }
- 
-    }
-
-    private void FixedUpdate()
-    {
-        if (IsJumping)
+        else if (Time.time >= NextAttackTime)
         {
-            JumpTime -= Time.fixedDeltaTime;
-
-            if (JumpTime > 0f)
-            {
-                rb.linearVelocity = JumpTarget * JumpSpeed;
-            }
-            else
-            {
-                IsJumping = false;
-                rb.linearVelocity = Vector2.zero;
-
-                if (Vector2.Distance(transform.position, Player.position) <= AttackRange * 1.2f)
-                {
-                    PlayerManager.Instance.TakeDamage(Damage);
-                }
-            }
-        }   
-    }
-
-
-    public void Behaviour()
-    {
-        if (PlayerInDetectionRange())
-        {
-            if (Vector2.Distance(transform.position, Player.position) > AttackRange)
-            {
-                MoveTowardsPlayer();
-            }
-            else
-            {
-                StopMoving();
-                AttackPlayer();
-            }
+            StartLunge();
+            NextAttackTime = Time.time + AttackCooldown;
         }
     }
 
-    void AttackPlayer()
+    void StartLunge()
     {
-        if (!IsJumping && Time.time > AttackCooldown)
+        isLunging = true;
+        lungeTimer = lungeDuration;
+        lungeDirection = (Player.position - transform.position).normalized;
+    }
+
+    void HandleLunge()
+    {
+        lungeTimer -= Time.fixedDeltaTime;
+
+        if (lungeTimer > 0)
         {
-            JumpTarget = (Player.position - transform.position).normalized;
-            JumpTime = JumpDuration;
-            IsJumping = true;
-            AttackCooldown = Time.time + AttackCooldown;
+            rb.linearVelocity = lungeDirection * lungeSpeed;
+        }
+        else
+        {
+            isLunging = false;
+            rb.linearVelocity = Vector2.zero;
+
+            if (Vector2.Distance(transform.position, Player.position) <= AttackRange * 1.2f)
+                PlayerManager.Instance.TakeDamage(Damage);
         }
     }
 
     void RotateTowardsPlayer()
     {
-        if (Player == null) return;
-
         Vector2 direction = (Player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
-
 }

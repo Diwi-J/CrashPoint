@@ -2,57 +2,41 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    protected float Health;
-    protected float Damage;
-    protected float MoveSpeed;
+    [Header("Base Stats")]
+    [SerializeField] protected float Health;
+    [SerializeField] protected float Damage;
+    [SerializeField] protected float MoveSpeed;
 
-
-    protected float DetectionRange;
-    protected float AttackRange;
-    protected float AttackCooldown;
+    [Header("Combat")]
+    [SerializeField] protected float DetectionRange = 10f;
+    [SerializeField] protected float AttackRange = 2f;
+    [SerializeField] protected float AttackCooldown = 1f;
 
     protected Transform Player;
+    protected float NextAttackTime;
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-
         if (Player == null)
-        {
-            Debug.LogError("Player not found in the scene. Make sure the player has the 'Player' tag.");
-        }
+            Debug.LogError("Player not found!");
     }
 
-    protected bool PlayerInDetectionRange()
-    {
-        return Vector2.Distance(transform.position, Player.position) <= DetectionRange;
-    }
+    protected bool PlayerInDetectionRange() =>
+        Vector2.Distance(transform.position, Player.position) <= DetectionRange;
 
     public void MoveTowardsPlayer()
     {
         if (Player == null) return;
-        transform.position = Vector2.MoveTowards(transform.position, Player.position, MoveSpeed * Time.deltaTime);
-    }
- 
-    public void TakeDamage(float DamageAmount)
-    {
-        Health -= DamageAmount;
-        if (Health <= 0)
-        {
-            Die();
-        }
+        transform.position = Vector2.MoveTowards( transform.position, Player.position, MoveSpeed * Time.deltaTime);
     }
 
-    public void StopMoving()
+    public void TakeDamage(float amount)
     {
-        if (TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+        Health -= amount;
+        if (Health <= 0) Die();
     }
 
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+    protected virtual void Die() => Destroy(gameObject);
+    
 }

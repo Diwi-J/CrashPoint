@@ -48,28 +48,17 @@ public class PlayerManager : MonoBehaviour
     public Vector2 RespawnPosition;
     #endregion Fields
 
-    /*
-    public enum PlayerState
-    {
-        Alive,
-        Insane,
-        Respawning,
-        Dead
-    }
-    PlayerState CurrentPlayerState = PlayerState.Alive;
-    */
-
     void Awake()
     {
-        // Singleton setup
+        /*// Singleton setup
         if (Instance == null)
         {
             Instance = this;
         }
         else
         {
-            Destroy(gameObject);
-        }
+            //Destroy(gameObject);
+        }*/
     }
 
     void Start()
@@ -132,7 +121,7 @@ public class PlayerManager : MonoBehaviour
             LoseLife();
         }
 
-        Debug.Log($"Health: {Health} | Hunger: {Hunger} | Hydration: {Hydration} | Sleep: {Sleep} | Insanity: {Insanity} | Lives: {Lives}");
+        //Debug.Log($"Health: {Health} | Hunger: {Hunger} | Hydration: {Hydration} | Sleep: {Sleep} | Insanity: {Insanity} | Lives: {Lives}");
     }
 
     void LoseLife()

@@ -6,6 +6,7 @@ public class Inventory : ScriptableObject
 {
     public int MaxSlots = 8;
     public List<ItemInstance> items = new List<ItemInstance>();
+   
 
     public bool AddItem(ItemData itemData, int Amount = 1)
     {

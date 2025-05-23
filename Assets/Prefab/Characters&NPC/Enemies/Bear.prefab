@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5587569991158453647}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,8 +51,10 @@ MonoBehaviour:
   Damage: 0
   MoveSpeed: 0
   DetectionRange: 0
-  AttackRange: 0
-  AttackCooldown: 0
+  AttackRange: 2
+  AttackCooldown: 1
+  lungeSpeed: 8
+  lungeDuration: 0.4
 --- !u!212 &8256459026283706945
 SpriteRenderer:
   m_ObjectHideFlags: 0
