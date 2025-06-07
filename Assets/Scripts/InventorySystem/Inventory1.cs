@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory/Inventory")]
-public class Inventory : ScriptableObject
+public class Inventory1: ScriptableObject
 {
     public int MaxSlots = 8;
     public List<ItemInstance> items = new List<ItemInstance>();
    
 
-    public bool AddItem(ItemData itemData, int Amount = 1)
+    public bool AddItem(ItemData1 itemData, int Amount = 1)
     {
         foreach (ItemInstance item in items)
         {

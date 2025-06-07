@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour
+public class InventorySlotUI1 : MonoBehaviour
 {
     public Image icon;
     public Text amountText;

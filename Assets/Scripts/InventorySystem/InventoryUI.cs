@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI1 : MonoBehaviour
 {
     public GameObject inventoryMenu;
     public GameObject inventoryPanel;
     public GameObject slotPrefab;
-    public PlayerInventory playerInventory;
+    public PlayerInventory1 playerInventory;
 
-    private List<InventorySlotUI> slotUIs = new List<InventorySlotUI>();
+   /* private List<InventorySlotUI1> slotUIs = new List<InventorySlotUI1>();
 
     void Start()
     { 
@@ -32,7 +32,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < playerInventory.inventory.MaxSlots; i++)
         {
             GameObject slotGO = Instantiate(slotPrefab, inventoryPanel.transform);
-            InventorySlotUI slotUI = slotGO.GetComponent<InventorySlotUI>();
+            InventorySlotUI1 slotUI = slotGO.GetComponent<InventorySlotUI1>();
             slotUIs.Add(slotUI);
         }
     }
@@ -52,6 +52,6 @@ public class InventoryUI : MonoBehaviour
                 slotUIs[i].ClearSlot();
             }
         }
-    }
+    }*/
 }
 

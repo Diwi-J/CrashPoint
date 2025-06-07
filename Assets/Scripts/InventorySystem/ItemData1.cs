@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]   //https://www.youtube.com/watch?v=SGz3sbZkfkg&ab_channel=GameDevGuide/n
                                                                         //https://www.youtube.com/watch?v=pmBv0Cagx_o&ab_channel=GameDevBeginner
-public class ItemData : ScriptableObject
+public class ItemData1 : ScriptableObject
 {
     [Header("Item Details")]
     public string ItenName;
