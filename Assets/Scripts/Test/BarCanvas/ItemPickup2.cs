@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+/*public class ItemPickup : MonoBehaviour
 {
     public Item itemToGive;
     public int amount = 1;
@@ -18,4 +18,4 @@ public class ItemPickup : MonoBehaviour
             Destroy(gameObject); // Destroys the object
         }
     }
-}
+}*/ 
