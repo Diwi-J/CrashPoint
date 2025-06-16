@@ -106,7 +106,7 @@ public class InsanitySystem : MonoBehaviour
         currentInsanity = Mathf.Clamp(currentInsanity, 0, maxInsanity);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     //Checks if the player enters a dark or light zone
     {
         if (other.CompareTag("DarkZone"))
@@ -122,5 +122,5 @@ public class InsanitySystem : MonoBehaviour
             isInDarkness = false;
         if (other.CompareTag("LightZone"))
             isInLight = false;
-    }
+    }*/
 }

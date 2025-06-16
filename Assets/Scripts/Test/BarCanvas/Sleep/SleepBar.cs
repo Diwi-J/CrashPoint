@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -44,15 +44,15 @@ public class SleepSystem : MonoBehaviour
 
     void Update()
     {
-        if (isAsleep) return;
+        if (isAsleep || sleepSlider == null) return;
 
         if (!isResting)
         {
             currentSleep -= depletionRate * Time.deltaTime;
             currentSleep = Mathf.Clamp(currentSleep, 0, maxSleep);
+            sleepSlider.value = currentSleep;
         }
 
-        sleepSlider.value = currentSleep;
         UpdateSliderColor();
 
         if (currentSleep <= lowSleepThreshold && !isFlashing)
