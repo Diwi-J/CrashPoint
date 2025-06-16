@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -9,6 +10,13 @@ public class Bullet : MonoBehaviour
     private float speed;
     private float damage;
 
+    public PlayerManager playerManager;
+
+    private void Start()
+    {
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+    }
+
     public void Initialize(Vector2 dir, float spd, float dmg)
     {
         direction = dir;
@@ -16,7 +24,7 @@ public class Bullet : MonoBehaviour
         damage = dmg;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
 
         Destroy(gameObject, lifetime);
     }
@@ -36,14 +44,25 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerManager.Instance.TakeDamage(damage);
+            Debug.Log("Bullet hit the player!");
+
+            playerManager.TakeDamage(damage);
             Destroy(gameObject);
         }
-        else if (!other.isTrigger && !other.CompareTag("Enemy"))
+        else if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Bullet hit an enemy!");
+            EnemiesManager enemy = other.GetComponent<EnemiesManager>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
         }
+
     }
-
-
 }

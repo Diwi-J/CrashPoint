@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Soldier : EnemiesManager
 {
-    [Header("Ranged Attack")]
+    [Header("Soldier Settings")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed = 12f;
@@ -13,7 +13,7 @@ public class Soldier : EnemiesManager
 
         Health = 150f;
         Damage = 20f;
-        MoveSpeed = 0f; 
+        MoveSpeed = 0f;
 
         DetectionRange = 15f;
         AttackRange = 10f;
@@ -41,12 +41,5 @@ public class Soldier : EnemiesManager
 
         GameObject bullet = Instantiate(bulletPrefab, firePosition, Quaternion.identity);
         bullet.GetComponent<Bullet>().Initialize(direction, bulletSpeed, Damage);
-    }
-
-    void RotateTowardsPlayer()
-    {
-        Vector2 direction = (Player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

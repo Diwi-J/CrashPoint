@@ -3,14 +3,16 @@ using UnityEngine;
 public class Bear : EnemiesManager
 {
     [Header("Bear Settings")]
-    [SerializeField] private float lungeSpeed = 8f;
-    [SerializeField] private float lungeDuration = 0.4f;
+    [SerializeField] private float chargeUpTime = 0.4f;
+    [SerializeField] private float chargeDuration = 0.3f;
+    [SerializeField] private float chargeCooldown = 2f;
 
-    private bool isLunging;
-    private float lungeTimer;
-
-    private Vector2 lungeDirection;
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+
+    public PlayerManager playerManager;
+
+    private bool IsCharging = false;
 
     protected override void Awake()
     {
@@ -19,70 +21,80 @@ public class Bear : EnemiesManager
                 
         Health = 300f;
         Damage = 40f;
-        MoveSpeed = 4f;
-        AttackRange = 1.8f;
+        MoveSpeed = 3f;
+        DetectionRange = 10f;
+        AttackRange = 4f;
+        AttackCooldown = chargeCooldown;
+    }
+
+    private void Start()
+    {
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (Player == null) return;
 
-        RotateTowardsPlayer();
-
-        if (!isLunging && PlayerInDetectionRange())
-            Behavior();
-    }
-
-    void FixedUpdate()
-    {
-        if (isLunging)
-            HandleLunge();
-    }
-
-    void Behavior()
-    {
+        if (!IsCharging)
+        {
+            RotateTowardsPlayer();
+        }
+        
         float distance = Vector2.Distance(transform.position, Player.position);
 
-        if (distance > AttackRange)
+        if (distance <= DetectionRange && !IsCharging)
         {
-            MoveTowardsPlayer();
-        }
-        else if (Time.time >= NextAttackTime)
-        {
-            StartLunge();
-            NextAttackTime = Time.time + AttackCooldown;
-        }
-    }
-
-    void StartLunge()
-    {
-        isLunging = true;
-        lungeTimer = lungeDuration;
-        lungeDirection = (Player.position - transform.position).normalized;
-    }
-
-    void HandleLunge()
-    {
-        lungeTimer -= Time.fixedDeltaTime;
-
-        if (lungeTimer > 0)
-        {
-            rb.linearVelocity = lungeDirection * lungeSpeed;
-        }
-        else
-        {
-            isLunging = false;
-            rb.linearVelocity = Vector2.zero;
-
-            if (Vector2.Distance(transform.position, Player.position) <= AttackRange * 1.2f)
-                PlayerManager.Instance.TakeDamage(Damage);
+            if (distance > AttackRange)
+            {
+                MoveTowardsPlayer();
+            }
+            else if (Time.time >= NextAttackTime)
+            {
+                StartCoroutine(ChargeAtPlayer());
+                NextAttackTime = Time.time + AttackCooldown;
+            }
         }
     }
 
-    void RotateTowardsPlayer()
+    private System.Collections.IEnumerator ChargeAtPlayer()
     {
-        Vector2 direction = (Player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        IsCharging = true;
+
+        Vector2 start = transform.position;
+        Vector2 target = Player.position;
+
+        float elapsed = 0f;
+        float flashTime = 0f;
+        
+        while (flashTime < chargeUpTime)
+        {
+            flashTime += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time * 6f, 1));
+            yield return null;
+        }
+
+        spriteRenderer.color = Color.white;
+
+        while (elapsed < chargeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / chargeDuration;
+            transform.position = Vector2.Lerp(start, target, t);
+
+            yield return null;
+        } 
+
+        IsCharging = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && IsCharging)
+        {
+            playerManager.TakeDamage(Damage);
+            Debug.Log("Bear hit player!");
+        }
     }
 }

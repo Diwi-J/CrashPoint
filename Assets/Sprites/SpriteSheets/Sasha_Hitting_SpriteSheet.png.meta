@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: cb99279b27e9771429a0dd5e5c6929b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3240303976904812808
+    second: Sasha Axe SpriteSheet_0
+  - first:
+      213: 9211793575711199842
+    second: Sasha Axe SpriteSheet_1
+  - first:
+      213: 414812242450724656
+    second: Sasha Axe SpriteSheet_2
+  - first:
+      213: -3312775795981851126
+    second: Sasha Axe SpriteSheet_3
+  - first:
+      213: 2464400863721085114
+    second: Sasha Axe SpriteSheet_4
+  - first:
+      213: -3923805627869846664
+    second: Sasha Axe SpriteSheet_5
+  - first:
+      213: -2808337245182799055
+    second: Sasha Axe SpriteSheet_6
+  - first:
+      213: 285826096114576868
+    second: Sasha Axe SpriteSheet_7
+  - first:
+      213: 6638519788762241644
+    second: Sasha Axe SpriteSheet_8
+  - first:
+      213: 1076452172518069890
+    second: Sasha Axe SpriteSheet_9
+  - first:
+      213: 7727909516807214847
+    second: Sasha Axe SpriteSheet_10
+  - first:
+      213: -8757031215971672283
+    second: Sasha Axe SpriteSheet_11
+  - first:
+      213: -7597369656453607094
+    second: Sasha Axe SpriteSheet_12
+  - first:
+      213: 7977626416917853589
+    second: Sasha Axe SpriteSheet_13
+  - first:
+      213: -4346717319836092906
+    second: Sasha Axe SpriteSheet_14
+  - first:
+      213: 5087738061764568401
+    second: Sasha Axe SpriteSheet_15
+  - first:
+      213: 1018462956249163701
+    second: Sasha Axe SpriteSheet_16
+  - first:
+      213: 3265671854689859371
+    second: Sasha Axe SpriteSheet_17
+  - first:
+      213: 8489244012740415782
+    second: Sasha Axe SpriteSheet_18
+  - first:
+      213: -4668751640560144841
+    second: Sasha Axe SpriteSheet_19
+  - first:
+      213: 18661273789766096
+    second: Sasha Axe SpriteSheet_20
+  - first:
+      213: 2548559296645084555
+    second: Sasha Axe SpriteSheet_21
+  - first:
+      213: 8403962317179803375
+    second: Sasha Axe SpriteSheet_22
+  - first:
+      213: 2428224135986179664
+    second: Sasha Axe SpriteSheet_23
+  - first:
+      213: -1569865126986786797
+    second: Sasha Axe SpriteSheet_24
+  - first:
+      213: -5708070270831700029
+    second: Sasha Axe SpriteSheet_25
+  - first:
+      213: 2967350190771403121
+    second: Sasha Axe SpriteSheet_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sasha Axe SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 22
+        width: 622
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.48741361, y: 0.24101532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80962b39c4fd7fc20800000000000000
+      internalID: 3240303976904812808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sasha Axe SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 8378
+        y: 22
+        width: 627
+        height: 1058
+      alignment: 9
+      pivot: {x: 0.48666143, y: 0.2351787}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a066df327f7a602d0800000000000000
+      internalID: -3312775795981851126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sasha Axe SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 60
+        width: 666
+        height: 829
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35205042}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed227ee15577f300800000000000000
+      internalID: 285826096114576868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sasha Axe SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 6436
+        y: 60
+        width: 666
+        height: 829
+      alignment: 9
+      pivot: {x: 0.4811623, y: 0.3284906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a13935392c02c50800000000000000
+      internalID: 6638519788762241644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sasha Axe SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 4368
+        y: 11
+        width: 912
+        height: 694
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595392b75f836be60800000000000000
+      internalID: 7977626416917853589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0b773b685e343384685823c4ca16d731
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sasha Axe SpriteSheet_0: 3240303976904812808
+      Sasha Axe SpriteSheet_1: 285826096114576868
+      Sasha Axe SpriteSheet_10: 7727909516807214847
+      Sasha Axe SpriteSheet_11: -8757031215971672283
+      Sasha Axe SpriteSheet_12: -7597369656453607094
+      Sasha Axe SpriteSheet_14: -4346717319836092906
+      Sasha Axe SpriteSheet_15: 5087738061764568401
+      Sasha Axe SpriteSheet_16: 1018462956249163701
+      Sasha Axe SpriteSheet_17: 3265671854689859371
+      Sasha Axe SpriteSheet_18: 8489244012740415782
+      Sasha Axe SpriteSheet_19: -4668751640560144841
+      Sasha Axe SpriteSheet_2: 7977626416917853589
+      Sasha Axe SpriteSheet_20: 18661273789766096
+      Sasha Axe SpriteSheet_21: 2548559296645084555
+      Sasha Axe SpriteSheet_22: 8403962317179803375
+      Sasha Axe SpriteSheet_23: 2428224135986179664
+      Sasha Axe SpriteSheet_24: -1569865126986786797
+      Sasha Axe SpriteSheet_25: -5708070270831700029
+      Sasha Axe SpriteSheet_26: 2967350190771403121
+      Sasha Axe SpriteSheet_3: 6638519788762241644
+      Sasha Axe SpriteSheet_4: -3312775795981851126
+      Sasha Axe SpriteSheet_5: -3923805627869846664
+      Sasha Axe SpriteSheet_6: -2808337245182799055
+      Sasha Axe SpriteSheet_9: 1076452172518069890
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
