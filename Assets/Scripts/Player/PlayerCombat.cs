@@ -1,23 +1,79 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public Animator animator;
-    
-    public float AttckCooldown = 1f;
-    private float LastAttcktime;
+    [Header("Combat Settings")]
+    public float HitDamage = 100f;
+    public float ShootDamage = 30f;
+    public float bulletSpeed = 12f;
+
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform WeaponPoint;
+    [SerializeField] private PlayerController playercontorller;
+
+    Animator animator;
+    public GameObject AttackPoint;
+
+    bool Hitting = false;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        playercontorller = GetComponent<PlayerController>();
+    }
+
+    void Start()
+    {
+        AttackPoint = GameObject.Find("AttackPoint");
+        AttackPoint.SetActive(false);
+
+        if (AttackPoint == null)
+            Debug.LogError("AttackPoint GameObject not found!");
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= LastAttcktime + AttckCooldown)
+        Hit();
+        Shoot();
+    }
+    
+    void Hit()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !Hitting)
         {
-            LastAttcktime = Time.time;
-            Attack();
+            animator.SetTrigger("IsHitting");
+            Hitting = true;
+
+            StartCoroutine(EnableAttackPointTemporarily());
         }
     }
     
-    void Attack()
+    void EndHit()
     {
-        animator.SetTrigger("Attack");
+        Hitting = false;
     }
+
+    void Shoot()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+                        
+            /*Vector2 ShootPosition = WeaponPoint.position;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            GameObject bullet = Instantiate(bulletPrefab, ShootPosition, Quaternion.identity);
+            bullet.GetComponent<Bullet>().Initialize(mousePosition, bulletSpeed, ShootDamage);*/
+            
+        }
+    }
+
+    IEnumerator EnableAttackPointTemporarily()
+    {
+        AttackPoint.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        AttackPoint.SetActive(false);
+    }
+
+
 }

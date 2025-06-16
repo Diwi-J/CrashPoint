@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     float MoveSpeed;
 
+    public bool IsArmed = false; 
+
     public enum MoveState
     {
         Walk,
@@ -23,30 +26,27 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
 
     Animator animator;
-    SpriteRenderer spriteRenderer;
-
-    [Space]
-    [Header("Sprite Settings")]
-    [SerializeField] Sprite IdleSprite;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         MoveInput();
         RotationInput();
-        Animate();
+        WalkAnimate();
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * MoveSpeed * Time.deltaTime);
+        if (movement != Vector2.zero)
+        {
+            rb.MovePosition(rb.position + movement * MoveSpeed * Time.deltaTime);
+        }
     }
 
     void MoveInput()
@@ -54,7 +54,16 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        movement = new Vector2(movement.x, movement.y).normalized;
+        movement = new Vector2(movement.x, movement.y);
+
+        if (movement.magnitude > 0.1f)
+        {
+            movement = movement.normalized;
+        }
+        else
+        {
+            movement = Vector2.zero;
+        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -85,27 +94,22 @@ public class PlayerController : MonoBehaviour
     }
     void RotationInput()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePosition - transform.position).normalized;
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePosition - rb.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0f, 0f, angle - 90);
+        rb.MoveRotation(angle - 90);
     }
 
-    void Animate()
+    void WalkAnimate()
     {
         bool Moving = movement.magnitude > 0.1f;
         animator.SetBool("IsMoving", Moving);
-
-        if (!Moving)
+        
+        if (IsArmed)
         {
-            animator.enabled = false;
-            spriteRenderer.sprite = IdleSprite;
-        }
-        else
-        {
-            animator.enabled = true;
+            animator.SetBool("IsArmed", IsArmed);
         }
     }
 }

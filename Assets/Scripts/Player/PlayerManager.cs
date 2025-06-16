@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -46,20 +48,17 @@ public class PlayerManager : MonoBehaviour
     [Space]
     [Header("Respawn")]
     public Vector2 RespawnPosition;
-    #endregion Fields
 
-    void Awake()
-    {
-        /*// Singleton setup
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            //Destroy(gameObject);
-        }*/
-    }
+    [Space]
+    [Header("Post Processing")]
+    [SerializeField] Volume volume;
+    [SerializeField] float flashDuration = 0.5f;
+    [SerializeField] float maxIntensity = 0.4f;
+
+    [Space]
+    Vignette vignette;
+    ChromaticAberration chromaticAberration;
+    #endregion Fields
 
     void Start()
     {
@@ -71,11 +70,22 @@ public class PlayerManager : MonoBehaviour
         Insanity    = 0f;
 
         RespawnPosition = transform.position;
+
+        if (volume.profile.TryGet(out vignette))
+        {
+            vignette.intensity.value = 0f;
+        }
+
+        if (volume.profile.TryGet(out chromaticAberration))
+        {
+            chromaticAberration.intensity.value = 0f;
+        }
     }
 
     void Update()
     {
         DrainStats();
+        UpdateInsanityEffects();
     }
 
     void DrainStats()
@@ -120,7 +130,7 @@ public class PlayerManager : MonoBehaviour
         {
             LoseLife();
         }
-
+ 
         //Debug.Log($"Health: {Health} | Hunger: {Hunger} | Hydration: {Hydration} | Sleep: {Sleep} | Insanity: {Insanity} | Lives: {Lives}");
     }
 
@@ -136,16 +146,8 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("Player died. Respawning...");
             Respawn();
-        
         }
     }
-
-    public void TakeDamage(float damage)
-    {
-        Health      -= damage;
-        Insanity    += InsanityFromDamage;
-    }
-
     void Respawn()
     {
         transform.position = RespawnPosition;
@@ -159,4 +161,56 @@ public class PlayerManager : MonoBehaviour
 
         Debug.Log("Player respawned.");
     }
+    public void TakeDamage(float damage)
+    {
+        Health      -= damage;
+        Insanity    += InsanityFromDamage;
+
+        Debug.Log($"Player took {damage} damage. Remaining Health: {Health}");
+        FlashRedVignette();
+    }
+
+    #region Post Processing Methods
+    public void FlashRedVignette()
+    {
+        if (vignette != null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(FlashVignette());
+        }
+    }
+
+    System.Collections.IEnumerator FlashVignette()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < flashDuration / 2)
+        {
+            elapsed += Time.deltaTime;
+            vignette.intensity.value = Mathf.Lerp(0f, maxIntensity, elapsed / (flashDuration / 2));
+            yield return null;
+        }
+
+        elapsed = 0f;
+        while (elapsed < flashDuration / 2)
+        {
+            elapsed += Time.deltaTime;
+            vignette.intensity.value = Mathf.Lerp(maxIntensity, 0f, elapsed / (flashDuration / 2));
+            yield return null;
+        }
+
+        vignette.intensity.value = 0f;
+
+        Debug.Log("Vignette flash complete.");
+    }
+
+    void UpdateInsanityEffects()
+    {
+        if (chromaticAberration != null)
+        {
+            float insanityNormalized = Mathf.Clamp01(Insanity / MaxInsanity);
+            chromaticAberration.intensity.value = insanityNormalized;
+        }
+    }
+    #endregion 
 }

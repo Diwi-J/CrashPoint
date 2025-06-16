@@ -1,13 +1,46 @@
 fileFormatVersion: 2
-guid: c717a446c0c04ed4c85a03d2a5c0c281
+guid: a4750cd160d094a4590cadd60f8a756f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4415169526545521014
-    second: WA 2 walls_0
+      213: 8633881525917383573
+    second: Spritesheet_0
   - first:
-      213: 6640001361350184356
-    second: WA 2 walls_1
+      213: -1771866121167276815
+    second: Spritesheet_1
+  - first:
+      213: 2091829175261615561
+    second: Spritesheet_2
+  - first:
+      213: 756911166660455246
+    second: Spritesheet_3
+  - first:
+      213: 403005533434085257
+    second: Spritesheet_4
+  - first:
+      213: 6961653080833796888
+    second: Spritesheet_5
+  - first:
+      213: 6266472923241529454
+    second: Spritesheet_6
+  - first:
+      213: -5282911695883833476
+    second: Spritesheet_7
+  - first:
+      213: 7021449457718125206
+    second: Spritesheet_8
+  - first:
+      213: 7357123456376359846
+    second: Spritesheet_9
+  - first:
+      213: -7343860702648896561
+    second: Spritesheet_10
+  - first:
+      213: -3531878321590394162
+    second: Spritesheet_11
+  - first:
+      213: -4888718896546230129
+    second: Spritesheet_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,45 +175,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WA 2 walls_0
+      name: Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 223
-        y: 328
-        width: 1106
-        height: 727
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 893
+        y: 452
+        width: 279
+        height: 523
+      alignment: 9
+      pivot: {x: 0.49422202, y: 0.2873192}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67910e4ba45d54d30800000000000000
-      internalID: 4415169526545521014
+      spriteID: 81b2a94b792cc9060800000000000000
+      internalID: 6961653080833796888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WA 2 walls_1
+      name: Spritesheet_7
       rect:
         serializedVersion: 2
-        x: 229
-        y: 152
-        width: 1225
-        height: 924
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2811
+        y: 367
+        width: 281
+        height: 608
+      alignment: 9
+      pivot: {x: 0.49999914, y: 0.38864064}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ad4363de06062c50800000000000000
-      internalID: 6640001361350184356
+      spriteID: c7f661b7dc35fa6b0800000000000000
+      internalID: -5282911695883833476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 452
+        width: 279
+        height: 523
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3017753}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abc10acdc0c91660800000000000000
+      internalID: 7357123456376359846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 6653
+        y: 370
+        width: 283
+        height: 604
+      alignment: 9
+      pivot: {x: 0.4938197, y: 0.3870907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2a3b3116f3cfec0800000000000000
+      internalID: -3531878321590394162
       vertices: []
       indices: 
       edges: []
@@ -189,7 +266,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 53cee5391e505b3429126b3247cfe354
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +276,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WA 2 walls_0: 4415169526545521014
-      WA 2 walls_1: 6640001361350184356
+      Spritesheet_0: 8633881525917383573
+      Spritesheet_1: -1771866121167276815
+      Spritesheet_10: -7343860702648896561
+      Spritesheet_11: -3531878321590394162
+      Spritesheet_12: -4888718896546230129
+      Spritesheet_2: 2091829175261615561
+      Spritesheet_3: 756911166660455246
+      Spritesheet_4: 403005533434085257
+      Spritesheet_5: 6961653080833796888
+      Spritesheet_6: 6266472923241529454
+      Spritesheet_7: -5282911695883833476
+      Spritesheet_8: 7021449457718125206
+      Spritesheet_9: 7357123456376359846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
