@@ -55,7 +55,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float flashDuration = 0.5f;
     [SerializeField] float maxIntensity = 0.4f;
 
-    [Space]
     Vignette vignette;
     ChromaticAberration chromaticAberration;
     #endregion Fields
@@ -178,6 +177,10 @@ public class PlayerManager : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(FlashVignette());
         }
+        else
+        {
+            Debug.Log(FlashVignette() + " - Vignette not found in volume profile.");
+        }
     }
 
     System.Collections.IEnumerator FlashVignette()
@@ -192,6 +195,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         elapsed = 0f;
+
         while (elapsed < flashDuration / 2)
         {
             elapsed += Time.deltaTime;
@@ -211,6 +215,8 @@ public class PlayerManager : MonoBehaviour
             float insanityNormalized = Mathf.Clamp01(Insanity / MaxInsanity);
             chromaticAberration.intensity.value = insanityNormalized;
         }
+
+        Debug.Log("insanity effects updated. Current Insanity: " + Insanity);
     }
     #endregion 
 }

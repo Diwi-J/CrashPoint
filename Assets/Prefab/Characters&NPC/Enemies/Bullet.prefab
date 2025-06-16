@@ -166,3 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+  playerManager: {fileID: 702674306827408625, guid: e9c255ed7b3a58544b8089519d551860, type: 3}

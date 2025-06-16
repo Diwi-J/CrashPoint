@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a5900b68dc0b8b24aa744e6dcabcf4be
+guid: 61c75a8b4df8d27428a479201f98699c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2208421263695951067
-    second: cable_car-removebg-preview_0
+      213: 89945537323060539
+    second: Edmund_Stabbing_0
+  - first:
+      213: -2238315687438556572
+    second: Edmund_Stabbing_1
+  - first:
+      213: 1261117277058419282
+    second: Edmund_Stabbing_2
+  - first:
+      213: 8035474211030863778
+    second: Edmund_Stabbing_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,23 +148,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cable_car-removebg-preview_0
+      name: Edmund_Stabbing_2
       rect:
         serializedVersion: 2
-        x: 293
-        y: 0
-        width: 129
-        height: 374
+        x: 758
+        y: 511
+        width: 458
+        height: 425
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 52bcbf6bf8c1a51e0800000000000000
-      internalID: -2208421263695951067
+      spriteID: 25acc275b73608110800000000000000
+      internalID: 1261117277058419282
       vertices: []
       indices: 
       edges: []
@@ -164,7 +173,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e3b3a336002333b4d9ada43a48cad8a4
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +183,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cable_car-removebg-preview_0: -2208421263695951067
+      Edmund_Stabbing_2: 1261117277058419282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
