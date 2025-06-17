@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float CrouchSpeed = 1.5f;
 
     float MoveSpeed;
-    public bool IsArmed;
+    public bool IsArmed = false;
 
     public enum MoveState
     {
@@ -37,9 +38,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+     
+
         MoveInput();
         RotationInput();
         WalkAnimate();
+
     }
 
     void FixedUpdate()
@@ -113,7 +117,21 @@ public class PlayerController : MonoBehaviour
         bool Moving = movement.magnitude > 0.1f;
         animator.SetBool("IsMoving", Moving);
 
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            IsArmed = true;
+        }
+         
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            IsArmed = false;
+        }
+
         if (IsArmed)
+        {
+            animator.SetBool("IsArmed", IsArmed);
+        }
+        else if (!IsArmed)
         {
             animator.SetBool("IsArmed", IsArmed);
         }

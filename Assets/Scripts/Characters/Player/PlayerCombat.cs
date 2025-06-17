@@ -43,7 +43,7 @@ public class PlayerCombat : MonoBehaviour
     
     void Hit()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Hitting)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsArmed && !Hitting)
         {
             animator.SetTrigger("IsHitting");
             Hitting = true;
