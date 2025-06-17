@@ -43,11 +43,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5206177745218707647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c61247f3bafdfe43be222515fba06ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 34689f984a1f321488db513a91e1eba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTag: Player
   itemData: {fileID: 11400000, guid: ebb2263994947964b81a7e6754101afe, type: 2}
-  Amount: 1
+  quantity: 1
+  pickupSound: {fileID: 8300000, guid: 0d4c36573f2a1d345a4e2f061f1a42cb, type: 3}
 --- !u!212 &-2284003017919459999
 SpriteRenderer:
   m_ObjectHideFlags: 0
