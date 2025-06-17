@@ -10,7 +10,7 @@ public class KeypadActivator : MonoBehaviour
         if (button != null)
         {
             button.SetActive(true);
-            Time.timeScale = 0; // Optional: pause game
+            Time.timeScale = 0;
             Debug.Log("Keypad opened");
         }
     }
