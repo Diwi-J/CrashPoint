@@ -52,6 +52,7 @@ public class Edmund : EnemiesManager
             }
         }
 
+
         if (Time.time >= nextChargeTime)
         {
             StartCoroutine(ChargeAttack());

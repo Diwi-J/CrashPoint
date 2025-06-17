@@ -51,10 +51,12 @@ public class PlayerManager : MonoBehaviour
 
     [Space]
     [Header("Post Processing")]
+
     [SerializeField] Volume volume;
     [SerializeField] float flashDuration = 0.5f;
     [SerializeField] float maxIntensity = 0.4f;
 
+    Coroutine vignetteRoutine;
     Vignette vignette;
     ChromaticAberration chromaticAberration;
     #endregion Fields
@@ -69,6 +71,8 @@ public class PlayerManager : MonoBehaviour
         Insanity    = 0f;
 
         RespawnPosition = transform.position;
+
+        volume = GameObject.Find("PostProcessingVolume").GetComponent<Volume>();
 
         if (volume.profile.TryGet(out vignette))
         {
@@ -174,8 +178,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (vignette != null)
         {
-            StopAllCoroutines();
-            StartCoroutine(FlashVignette());
+            if (vignetteRoutine != null)
+                StopCoroutine(vignetteRoutine);
+            vignetteRoutine = StartCoroutine(FlashVignette());
         }
         else
         {
@@ -215,8 +220,7 @@ public class PlayerManager : MonoBehaviour
             float insanityNormalized = Mathf.Clamp01(Insanity / MaxInsanity);
             chromaticAberration.intensity.value = insanityNormalized;
         }
-
-        Debug.Log("insanity effects updated. Current Insanity: " + Insanity);
+        //Debug.Log("insanity effects updated. Current Insanity: " + Insanity);
     }
     #endregion 
 }

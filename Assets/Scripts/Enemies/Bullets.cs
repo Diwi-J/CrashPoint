@@ -11,10 +11,12 @@ public class Bullet : MonoBehaviour
     private float damage;
 
     public PlayerManager playerManager;
+    public EnemiesManager enemiesManager;
 
     private void Start()
     {
         playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
+        //enemiesManager = GameObject.Find("Managers").GetComponent<EnemiesManager>();
     }
 
     public void Initialize(Vector2 dir, float spd, float dmg)
@@ -53,16 +55,13 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Bullet hit an enemy!");
             EnemiesManager enemy = other.GetComponent<EnemiesManager>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+                      
+            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-
     }
 }

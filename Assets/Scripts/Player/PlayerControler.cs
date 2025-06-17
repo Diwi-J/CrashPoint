@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float CrouchSpeed = 1.5f;
 
     float MoveSpeed;
-
-    public bool IsArmed = false; 
+    public bool IsArmed;
 
     public enum MoveState
     {
