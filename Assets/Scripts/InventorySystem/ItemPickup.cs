@@ -7,7 +7,7 @@ public class ItemPickup : MonoBehaviour
     public int quantity = 1;        // Quantity to add
     public AudioClip pickupSound;
 
-       private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag(playerTag))
             return;
@@ -20,7 +20,7 @@ public class ItemPickup : MonoBehaviour
             return;
         }
 
-        var invManager = FindObjectOfType<InventoryManager>();
+        var invManager = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryManager>();
 
         if (invManager == null)
         {

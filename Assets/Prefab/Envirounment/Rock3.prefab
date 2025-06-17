@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7949726997808988115}
   - component: {fileID: 4321940733044131192}
-  - component: {fileID: 4868996976084015989}
+  - component: {fileID: 9053740050230900700}
   m_Layer: 0
   m_Name: Rock3
   m_TagString: Untagged
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4868996976084015989
-BoxCollider2D:
+--- !u!60 &9053740050230900700
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,5 +132,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.49, y: 0.62}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.074999996, y: 0.29}
+      - {x: -0.055, y: 0.29}
+      - {x: -0.235, y: 0.19999999}
+      - {x: -0.235, y: -0.28}
+      - {x: -0.195, y: -0.29999998}
+      - {x: -0.125, y: -0.31}
+      - {x: 0.155, y: -0.31}
+      - {x: 0.235, y: -0.28}
+      - {x: 0.235, y: -0.08}
+      - {x: 0.205, y: 0.02}
+  m_UseDelaunayMesh: 0
