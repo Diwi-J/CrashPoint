@@ -5,7 +5,6 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using System;
-using UnityEditor.Experimental.GraphView;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject itemCursor; //Cursor that follows the mouse when moving items
