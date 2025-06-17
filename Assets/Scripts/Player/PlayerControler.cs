@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float CrouchSpeed = 1.5f;
 
     float MoveSpeed;
-
-    public bool IsArmed = false; 
+    public bool IsArmed;
 
     public enum MoveState
     {
@@ -26,12 +25,14 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
 
     Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -65,6 +66,8 @@ public class PlayerController : MonoBehaviour
             movement = Vector2.zero;
         }
 
+        //previousMoveState = CurrentsMoveState;
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             CurrentsMoveState = MoveState.Run;
@@ -82,12 +85,15 @@ public class PlayerController : MonoBehaviour
         {
             case MoveState.Run:
                 MoveSpeed = RunSpeed;
+                AnimateCrounch(1f);
                 break;
             case MoveState.Crouch:
                 MoveSpeed = CrouchSpeed;
+                AnimateCrounch(0.5f);
                 break;
             default:
                 MoveSpeed = WalkSpeed;
+                AnimateCrounch(1f);
                 break;
         }
 
@@ -106,10 +112,19 @@ public class PlayerController : MonoBehaviour
     {
         bool Moving = movement.magnitude > 0.1f;
         animator.SetBool("IsMoving", Moving);
-        
+
         if (IsArmed)
         {
             animator.SetBool("IsArmed", IsArmed);
+        }
+    }
+    void AnimateCrounch(float alpha)
+    {
+        if (spriteRenderer != null)
+        {
+            Color newColor = spriteRenderer.color;
+            newColor.a = alpha;
+            spriteRenderer.color = newColor;
         }
     }
 }

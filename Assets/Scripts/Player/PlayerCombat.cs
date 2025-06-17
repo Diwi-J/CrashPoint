@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject AttackPoint;
 
     bool Hitting = false;
+    bool IsArmed => playercontorller.IsArmed;
 
     private void Awake()
     {
@@ -30,6 +31,8 @@ public class PlayerCombat : MonoBehaviour
 
         if (AttackPoint == null)
             Debug.LogError("AttackPoint GameObject not found!");
+
+        WeaponPoint = GameObject.Find("WeaponPoint").transform;
     }
 
     void Update()
@@ -56,15 +59,15 @@ public class PlayerCombat : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && IsArmed)
         {
                         
-            /*Vector2 ShootPosition = WeaponPoint.position;
+            Vector2 ShootPosition = WeaponPoint.position;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mousePosition - ShootPosition).normalized;
 
             GameObject bullet = Instantiate(bulletPrefab, ShootPosition, Quaternion.identity);
-            bullet.GetComponent<Bullet>().Initialize(mousePosition, bulletSpeed, ShootDamage);*/
-            
+            bullet.GetComponent<Bullet>().Initialize(direction, bulletSpeed, ShootDamage);
         }
     }
 
@@ -74,6 +77,4 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         AttackPoint.SetActive(false);
     }
-
-
 }

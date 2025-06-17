@@ -22,6 +22,7 @@ public class Bear : EnemiesManager
         Health = 300f;
         Damage = 40f;
         MoveSpeed = 3f;
+
         DetectionRange = 10f;
         AttackRange = 4f;
         AttackCooldown = chargeCooldown;
