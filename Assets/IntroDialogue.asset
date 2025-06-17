@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec635a61265a69446b6249180356cee1, type: 3}
-  m_Name: AK47
+  m_Script: {fileID: 11500000, guid: 59516dbf4b946744c826172badf78408, type: 3}
+  m_Name: IntroDialogue
   m_EditorClassIdentifier: 
-  itemName: AK47
-  itemIcon: {fileID: 8271715202566429118, guid: 7c592f89e6db0c64c8d515248b856295, type: 3}
-  isStackable: 0
-  toolType: 0
+  lines:
+  - characterName: Hunter
+    text: Hey, crazy to see a new person here
+  - characterName: Player
+    text: Help

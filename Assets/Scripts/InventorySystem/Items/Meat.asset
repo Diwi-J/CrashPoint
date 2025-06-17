@@ -9,17 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d6cb8d3871da44a91fb0392700e6a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c6c6dd515198d244a5f5c25c370482c, type: 3}
   m_Name: Meat
   m_EditorClassIdentifier: 
-  ItenName: Meat
-  MaxStack: 5
-  itemType: 1
-  ItemIcon: {fileID: -5758750775930548681, guid: 7dd1f99404bb96347a0268887c0a09fb, type: 3}
-  ItemPrefab: {fileID: 5206177745218707647, guid: a11a19031e588b84589a05747fe4b84a, type: 3}
-  Damage: 0
-  AttackRange: 0
-  AttackRate: 0
-  Restohealth: 0
-  RestoreHydration: 0
-  RestoreHunger: 1
+  itemName: Meat
+  itemIcon: {fileID: 2946792996138663186, guid: 859bc6efbc37661488fd7733361a5fa3, type: 3}
+  healthAdded: 45
+  thirstAdded: 0
