@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BossLevelNL : MonoBehaviour
+public class LevelLoader : MonoBehaviour
 {
     public string sceneToLoad;
 
@@ -9,9 +9,8 @@ public class BossLevelNL : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Boss Level");
+            SceneManager.LoadScene("End Scene");
         }
     }
 
 }
-
